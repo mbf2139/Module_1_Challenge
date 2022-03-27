@@ -164,13 +164,17 @@ loans = [
 ]
 
 # @TODO: Create an empty list called `inexpensive_loans`
-# YOUR CODE HERE!
+inexpensive_loans = []
 
 # @TODO: Loop through all the loans and append any that cost $500 or less to the `inexpensive_loans` list
-# YOUR CODE HERE!
+for loan in loans:
+    if loan["loan_price"] <= 500:
+        inexpensive_loans.append(loan)
 
 # @TODO: Print the `inexpensive_loans` list
-# YOUR CODE HERE!
+qualifying_loans = len(inexpensive_loans)
+print(f"There are {qualifying_loans} qualifying loans.")
+print(inexpensive_loans)
 
 
 """Part 5: Save the results.
@@ -195,4 +199,11 @@ output_path = Path("inexpensive_loans.csv")
 
 # @TODO: Use the csv library and `csv.writer` to write the header row
 # and each row of `loan.values()` from the `inexpensive_loans` list.
-# YOUR CODE HERE!
+print("Writing data to a CVS file...")
+with open(output_path, "w", newline="") as csvfile:
+    cvswriter = csv.writer(csvfile)
+    cvswriter.writerow(header)
+    for loan in inexpensive_loans:
+        cvswriter.writerow(loan.values())
+  
+
