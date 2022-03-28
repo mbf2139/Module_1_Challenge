@@ -1,5 +1,7 @@
 """This is a loan_analyzer application"""
 
+# modules included in repository but left code in this script to comply with challenge directions
+
 # coding: utf-8
 import csv
 from pathlib import Path
