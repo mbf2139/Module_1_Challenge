@@ -1,3 +1,5 @@
+"""This is a loan_analyzer application"""
+
 # coding: utf-8
 import csv
 from pathlib import Path
@@ -199,11 +201,12 @@ output_path = Path("inexpensive_loans.csv")
 
 # @TODO: Use the csv library and `csv.writer` to write the header row
 # and each row of `loan.values()` from the `inexpensive_loans` list.
-print("Writing data to a CVS file...")
+print("Writing data to a CSV file...")
+ 
 with open(output_path, "w", newline="") as csvfile:
-    cvswriter = csv.writer(csvfile)
-    cvswriter.writerow(header)
+    csvwriter = csv.writer(csvfile)
+    csvwriter.writerow(header)
     for loan in inexpensive_loans:
-        cvswriter.writerow(loan.values())
+        csvwriter.writerow(loan.values())
   
 
